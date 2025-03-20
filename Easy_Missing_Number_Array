@@ -81,3 +81,18 @@ var missingNumber = (nums)=> {
 };
 missingNumber([3,0,1])
 missingNumber([9,6,4,2,3,5,7,0,1])
+
+
+/////////////////////////////////////////
+var missingNumber = function (nums) {
+  if (nums.length == 0) return
+  if (nums.length == 1 && nums[0] == 0) return "no missing number"
+  const numsArray = nums.sort((a, b) => a - b)
+
+  for (i = 0; i < numsArray.length; i++) {
+    if (numsArray[i] != i) return console.log("i", i)
+  }
+}
+missingNumber([3, 0, 1])
+missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])
+
