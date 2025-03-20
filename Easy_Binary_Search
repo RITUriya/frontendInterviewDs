@@ -28,11 +28,14 @@ nums is sorted in ascending order.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var search = function(nums, target) {
-   for(i=0;i<nums.length;i++){
-   if(nums[i]==target){
-   return console.log(i)
-   }
-   } 
-};
-search([-1,0,3,5,9,12],9)
+var search = function (nums, target) {
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] == target) {
+      return console.log(i)
+    }
+  }
+  return console.log(-1)
+}
+search([-1, 0, 3, 5, 9, 12], 9)
+search([-1, 0, 3, 5, 9, 12], 2)
+
