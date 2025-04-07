@@ -36,7 +36,7 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 
 ///////////////////////////////////////////////////////////////////////////
-
+sol1: 
 const singleNumber = (nums) => {
   const numsArray = nums.sort((a, b) => a - b)
 
@@ -47,3 +47,35 @@ const singleNumber = (nums) => {
 singleNumber([2, 2, 1])
 singleNumber([4, 1, 2, 1, 2])
 singleNumber([4, 1, 2, 1, 2,4,3,5,5])
+
+
+
+///////////////////////////////
+sol2: 
+
+
+const singleNumber = (nums) => {
+    if (nums.length == 0) return;
+    if (nums.length == 1) return nums[0];
+    const sortedNums = nums.sort((a, b) => a - b)
+
+    for (i = 0; i < sortedNums.length; i++) {
+        if (sortedNums[i] != sortedNums[i + 1] && sortedNums[i - 1] != sortedNums[i])
+            return sortedNums[i];
+    }
+};
+
+
+
+//////////////////////////////
+
+sol3:
+const singleNumber = (nums) => {
+    if (nums.length == 0) return;
+    if (nums.length == 1) return nums[0];
+    const numsArray = nums.sort((a, b) => a - b)
+
+    for (i = 0; i < numsArray.length; i += 2) {
+        if (numsArray[i] != numsArray[i + 1]) { if (numsArray[i - 1] != numsArray[i]) return numsArray[i] }
+    }
+};
