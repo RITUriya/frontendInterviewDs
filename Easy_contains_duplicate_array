@@ -76,3 +76,16 @@ containsDuplicate([1, 2, 3])
 containsDuplicate([1, 2, 3, 1])
 containsDuplicate([1, 2, 3, 4])
 containsDuplicate([1])
+
+
+
+
+/////////////////////////////////////////////////////
+
+sol3:6th april 2025
+
+const dup=(arr)=>{
+const newarray=[...new Set(arr)];
+return arr.length==newarray.length?(false):(true)
+}
+
