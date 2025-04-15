@@ -1,0 +1,60 @@
+linkedlist
+https://omken.medium.com/mastering-linked-lists-in-javascript-95c35a9b99e6 
+https://leetcode.com/discuss/post/4289887/90-of-the-linked-list-questions-on-linke-pste/
+
+class node {
+  constructor(data) {
+    this.data = data
+    this.next = null
+  }
+}
+
+class linkedlist {
+  constructor() {
+    this.head = null
+  }
+  append(data) {
+    const newnode = new node(data)
+    if (!this.head) {
+      this.head = newnode
+      newnode.next = null
+    } else {
+      current = this.head
+      while (current.next != null) {
+        current = current.next
+      }
+    }
+  }
+  prepend(data) {
+    const newnode = new node(data)
+    newnode.next = this.head
+    this.head = newnode
+  }
+  search(data) {
+    if (!this.head) {
+      return
+    }
+    if (this.head.data == data) return true
+    let current = this.head
+    while (current.next != null) {
+      if (current.data == data) {
+        return true
+      }
+      current = currnent.next
+    }
+    return false
+  }
+  delete(data) {
+    if (!this.head) return
+    if (this.head.data == data) this.head = this.head.next
+    while (current.next != null) {
+      current = this.head
+      while (current.next.data == data) {
+        current.next = current.next.next
+        return
+      }
+      current = current.next
+      s
+    }
+  }
+}
