@@ -1,0 +1,11 @@
+##https://leetcode.com/problems/find-the-duplicate-number/description/
+##https://seanprashad.com/leetcode-patterns/
+
+sol1:
+nums.sort((a, b) => a - b)
+   for (i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[i + 1]) return (nums[i + 1])
+
+    }
+    return nums[0];
+    }
