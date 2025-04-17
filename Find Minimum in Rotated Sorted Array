@@ -1,4 +1,4 @@
-##https://leetcode.com/problems/find-the-duplicate-number/description/
+##https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 ##https://seanprashad.com/leetcode-patterns/
 
 153. Find Minimum in Rotated Sorted Array   ==== Medium
@@ -36,14 +36,13 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 
 sol1:
 
-var findDuplicate = function (nums) {
-  nums.sort((a, b) => a - b)
-    for (i = 0; i < nums.length; i++) {
-        if (nums[i] == nums[i + 1] && nums[i - 1] != nums[i]) {
 
-            return nums[i]
-        }
+var findMin = function (nums) {
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[i + 1]) return (nums[i + 1])
+
     }
-}
+    return nums[0];
+};
 
 
