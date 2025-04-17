@@ -35,19 +35,15 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 //////////////////////////////////////////
 
 sol1:
-nums.sort((a, b) => a - b)
-   for (i = 0; i < nums.length; i++) {
-        if (nums[i] > nums[i + 1]) return (nums[i + 1])
 
-    }
-    return nums[0];
-    }
-
-
-var findMin = function (nums) {
+var findDuplicate = function (nums) {
+  nums.sort((a, b) => a - b)
     for (i = 0; i < nums.length; i++) {
-        if (nums[i] > nums[i + 1]) return (nums[i + 1])
+        if (nums[i] == nums[i + 1] && nums[i - 1] != nums[i]) {
 
+            return nums[i]
+        }
     }
-    return nums[0];
-};
+}
+
+
