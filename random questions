@@ -48,3 +48,10 @@ const palindrome = (str) => {
  
 }
 palindrome("madam")
+
+
+q6: captalize first letter of each word
+const capitalizefirstletter=(str)=>{
+
+}
+capitalizefirstletter('hello world')
