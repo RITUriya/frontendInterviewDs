@@ -1,0 +1,20 @@
+const anagram = (str1, str2) => {
+  const str1array = str1.toLowerCase().split("").sort().join("")
+  const str2array = str2.toLowerCase().split("").sort().join("")
+  return console.log(str1array == str2array)
+}
+anagram("listen", "silentt")
+
+const movezerotoend = (ar) => {
+  ar = ar.sort((a, b) => a - b)
+  let ar1 = []
+  for (i = 0; i < ar.length; i++) {
+    if (ar[i] == 0) {
+      ar.splice(i, 1)
+      ar1.push(0)
+      i--
+    }
+  }
+  ar = [...ar, ...ar1]
+}
+movezerotoend([0, 1, 0, 3, 12])
