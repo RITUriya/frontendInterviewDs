@@ -40,3 +40,11 @@ const missingarray = (ar) => {
   }
 }
 missingarray([1, 2, 4, 5])
+
+q5: palindrome
+const palindrome = (str) => {
+  const strarray = str.split("").reverse().join('');
+ return console.log(strarray==str)
+ 
+}
+palindrome("madam")
