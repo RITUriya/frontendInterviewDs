@@ -35,7 +35,7 @@ Constraints:
 s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 There is at least one word in s.
  
-
+Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
 
 
 sol1:
@@ -49,4 +49,16 @@ var reverseWords = function (s) {
     return (s.split(" ").reverse().join(" "))
 }
 ;
-Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
+sol2:
+
+  const words = s.split(" ")
+  let sarray = []
+
+  for (let i = words.length - 1; i >= 0; i--) {
+    sarray.push(words[i])
+  }
+  return sarray.join(" ").trim().replace(/\s+/g, " ")
+
+
+
+
