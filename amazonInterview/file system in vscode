@@ -1,0 +1,74 @@
+implement fileSystem as in vscode for react app
+
+import React from "react";
+
+interface FileNode {
+  name: string;
+  type: "file" | "folder";
+  children?: FileNode[];
+}
+
+const fileTree: FileNode[] = [
+  {
+    name: "src",
+    type: "folder",
+    children: [
+      { name: "App.tsx", type: "file" },
+      { name: "main.tsx", type: "file" },
+      {
+        name: "components",
+        type: "folder",
+        children: [
+          { name: "Header.tsx", type: "file" },
+          { name: "Footer.tsx", type: "file" },
+        ],
+      },
+      {
+        name: "hooks",
+        type: "folder",
+        children: [{ name: "useToggle.ts", type: "file" }],
+      },
+    ],
+  },
+  {
+    name: "public",
+    type: "folder",
+    children: [
+      { name: "index.html", type: "file" },
+      { name: "favicon.ico", type: "file" },
+    ],
+  },
+  { name: "package.json", type: "file" },
+  { name: "tsconfig.json", type: "file" },
+];
+
+const FileNodeComponent: React.FC<{ node: FileNode; level?: number }> = ({
+  node,
+  level = 0,
+}) => {
+  const paddingLeft = level * 20;
+  return (
+    <div style={{ paddingLeft }}>
+      <div>
+        {node.type === "folder" ? "📁" : "📄"} {node.name}
+      </div>
+      {node.children &&
+        node.children.map((child) => (
+          <FileNodeComponent key={child.name} node={child} level={level + 1} />
+        ))}
+    </div>
+  );
+};
+
+const FileExplorer: React.FC = () => {
+  return (
+    <div>
+      <h2>VSCode File System View</h2>
+      {fileTree.map((node) => (
+        <FileNodeComponent key={node.name} node={node} />
+      ))}
+    </div>
+  );
+};
+
+export default FileExplorer;
