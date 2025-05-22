@@ -48,3 +48,22 @@ var moveZeroes = function (nums) {
     }
     return (nums)
 }
+
+sol2:
+var moveZeroes = function (nums) {
+  let left = 0
+  for (let right = 0; right < nums.length; right++) {
+      console.log(nums[right],left,right)
+    if (nums[right] !== 0) {
+         
+     /*let swap=nums[right];
+     nums[right]=nums[left];
+     nums[left]=swap;*/
+[nums[right],nums[left]]=[nums[left],nums[right]];
+      left++
+      console.log(nums)
+    }
+  }
+  
+return (nums)
+}
