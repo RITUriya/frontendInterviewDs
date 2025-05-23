@@ -1,4 +1,4 @@
-
+Q: There is a bus station. tell me how many min number of bus lanes will be there if there is scheduledId (unique), inTime of bus, outTime of bus already given.
 
 sol1:
 const numOfRows = (arr) => {
