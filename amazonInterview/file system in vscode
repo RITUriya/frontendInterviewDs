@@ -1,4 +1,4 @@
-implement fileSystem as in vscode for react app
+Q: implement file system as it displays in vscode for any react project using react typescript
 
 import React from "react";
 
