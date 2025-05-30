@@ -36,3 +36,27 @@ numOfRows([
   { scheduledId: 3, inTime: 9.1, outTime: 11.4 },
   { scheduledId: 4, inTime: 10.2, outTime: 11.3 },
 ]);
+
+
+
+
+////////////////////////////////////////////////////////////
+
+const buslane=(busDetails)=>{
+    const inTimes=busDetails.map((e)=>e.in).sort((a,b)=>a-b);
+    const outTimes=busDetails.map((e)=>e.out).sort((a,b)=>a-b);
+    console.log(inTimes,outTimes);
+    
+    let i=0,j=0,max=0,count=0;
+    while(i<busDetails.length){
+        if(inTimes[i]<outTimes[j]){
+            count++;
+            i++;
+            max=Math.max(count,max);
+        }else{
+            count--;
+            j++;
+        }
+    }
+    console.log(max,count)
+}
