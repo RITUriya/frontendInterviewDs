@@ -32,3 +32,29 @@ numOfRows([
   { scheduledId: 3, inTime: 9.1, outTime: 11.4 },
   { scheduledId: 4, inTime: 10.2, outTime: 11.3 },
 ])
+
+////////////////////////////
+function minBusLanes(buses) {
+  const arrivals = buses.map(b => b.inTime).sort((a, b) => a - b);
+  const departures = buses.map(b => b.outTime).sort((a, b) => a - b);
+
+  let lanesNeeded = 0;
+  let maxLanes = 0;
+  let i = 0, j = 0;
+
+  while (i < arrivals.length) {
+    if (arrivals[i] < departures[j]) {
+      // Need a new lane
+      lanesNeeded++;
+      i++;
+    } else {
+      // A lane is freed
+      lanesNeeded--;
+      j++;
+    }
+
+    maxLanes = Math.max(maxLanes, lanesNeeded);
+  }
+
+  return maxLanes;
+}
