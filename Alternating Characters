@@ -1,0 +1,22 @@
+1. Problem: Alternating Characters
+
+You are given a string containing only characters A and B. You need to delete characters to make sure that no two same characters are adjacent.
+
+Input: "AABAAB"
+Output: 2
+
+Explanation:
+	•	Delete the second A and the fourth A → "ABAB" → no duplicates next to each other.
+
+
+const duplicate = (str) => {
+  const strarray = str.split("")
+  let count = 0
+  for (i = 0; i < strarray.length; i++) {
+    if (strarray[i] == str[i + 1]) {
+      count++
+    }
+  }
+ return (count)
+}
+duplicate("AABAABBAAABBABABABAAABABAWAWW")
