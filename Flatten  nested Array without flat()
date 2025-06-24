@@ -25,5 +25,28 @@ console.log(res)
 }
 
 flatten([1, [2, [3, [4]], 5]]);
+/////
+
+
+
+
+const flatarr = (arr) => {
+  let result = [];
+  let stack = [...arr];
+  console.log("4", result, stack);
+  while (stack.length) {
+    let next = stack.pop();
+    console.log("7", next);
+    if (Array.isArray(next)) {
+      stack.push(...next);
+      console.log("10", stack);
+    } else {
+      result.push(next);
+      console.log("13", result);
+    }
+  }
+  console.log(result);
+};
+flatarr([1, [2, [3, [4, [5]]]]]);
 
 
