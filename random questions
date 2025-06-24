@@ -4,9 +4,21 @@ const anagram = (str1, str2) => {
   const str2array = str2.toLowerCase().split("").sort().join("")
   return console.log(str1array == str2array)
 }
+///
+const anagram = (str1, str2) => {
+  if (str1.length == str2.length) {
+    const str1a = str1.split("").sort().join("")
+    const str2a = str2.split("").sort().join("")
+    if (str1)
+      if (str1a == str2a) {
+        return console.log("anagram")
+      } else return console.log("not anagram")
+  } else return console.log("not anagram")
+}
+
 anagram("listen", "silentt")
 
-
+///////////////////////////////////////////
 q2: move all 0s to end of array
 const movezerotoend = (ar) => {
   ar = ar.sort((a, b) => a - b)
