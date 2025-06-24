@@ -20,3 +20,26 @@ const duplicate = (str) => {
  return (count)
 }
 duplicate("AABAABBAAABBABABABAAABABAWAWW")
+
+/////////////////////
+2. Problem: Two Strings
+
+📄 Description:
+
+Given two strings, determine if they share a common substring. A single character is enough.
+
+Input: "hello", "world"
+Output: YES (they share l)
+
+Input: "hi", "abc"
+Output: NO
+
+
+const commonst = (str1, str2) => {
+  const set1 = new Set(str1)
+  for (ch of str2) {
+    if (set1.has(ch)) console.log(true)
+    else false
+  }
+}
+commonst("hello", "world")
