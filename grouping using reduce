@@ -1,0 +1,25 @@
+grouping using reduce:
+
+
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 25 },
+  { name: "David", age: 30 },
+  { name: "Eve", age: 35 },
+]
+
+function grouping(arr) {
+  const grouping = arr.reduce((acc, person) => {
+    const { age } = person
+    console.log("acc", acc, "person", person, "age", age, "{age", { age })
+    if (!acc[age]) {
+      console.log("14", acc[age])
+      acc[age] = []
+    }
+    acc[age].push(person)
+    return acc
+  }, {})
+  console.log(grouping)
+}
+grouping(people)
