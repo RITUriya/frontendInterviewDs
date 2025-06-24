@@ -1,0 +1,19 @@
+Flatten  nested Array without flat()
+
+function flatten(arr) {
+  let result = [];
+  let arry = [...arr];
+  while (arry.length) {
+    let next = arry.pop();
+    if (Array.isArray(next)) {
+      arry.push(...next);
+    } else {
+      result.push(next);
+    }
+  }
+  console.log(result);
+}
+
+flatten([1, [2, [3, [4]], 5]]);
+
+
