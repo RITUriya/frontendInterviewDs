@@ -39,10 +39,12 @@ const fizzbuzz = (num) => {
   if (num % 3 == 0 && num % 5 == 0) return console.log("fizzbuzz")
   else if (num % 3 == 0) return console.log("fizz")
   else if (num % 5 == 0) return console.log("buzz")
+else return console.log('not fizzbuzz');
 }
 fizzbuzz(3)
 fizzbuzz(5)
 fizzbuzz(15)
+fizzbuzz(151)
 
 
 q4: find the missing number from array where array elements start from 1 to n+1
