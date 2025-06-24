@@ -32,6 +32,19 @@ const movezerotoend = (ar) => {
   }
   ar = [...ar, ...ar1]
 }
+
+const movezero = (arr) => {
+  arr.sort((a, b) => a - b);
+  console.log(arr);
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      arr.shift();
+      arr.push(0);
+    }
+  }
+  console.log(arr);
+};
+
 movezerotoend([0, 1, 0, 3, 12])
 
 
