@@ -17,3 +17,13 @@ function flatten(arr) {
 flatten([1, [2, [3, [4]], 5]]);
 
 
+////////////////
+
+function flatten(arr) {
+  arr.flat(Infinity);
+console.log(res)
+}
+
+flatten([1, [2, [3, [4]], 5]]);
+
+
