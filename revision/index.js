@@ -1,22 +1,16 @@
 /**
- * @param {number[]} nums
+ * @param {number[]} prices
  * @return {number}
  */
-var majorityElement = function (nums) {
-  nums.sort((a, b) => a - b);
-  let count = 1;
-  const majel = Math.floor(nums.length / 2);
-  if (nums.length == 1) return nums[0];
-  else {
-    for (i = 0; i < nums.length; i++) {
-      if (nums[i] == nums[i + 1]) {
-        count++;
-        if (count > majel) {
-          console.log("in if loop", nums[i]);
-          return nums[i];
-        }
-      } else count = 1;
+var maxProfit = function (prices) {
+  let profit = 0;
+  let totalProfit = 0;
+  for (i = 0; i < prices.length; i++) {
+    profit = prices[i + 1] - prices[i];
+    if (profit > 0) {
+      totalProfit = totalProfit + profit;
     }
   }
 };
-majorityElement([1]);
+maxProfit([7, 1, 5, 3, 6, 4]);
+maxProfit([1, 2, 3, 4, 5]);
