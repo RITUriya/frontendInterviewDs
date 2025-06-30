@@ -1,16 +1,27 @@
 /**
- * @param {number[]} prices
- * @return {number}
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
  */
-var maxProfit = function (prices) {
-  let profit = 0;
-  let totalProfit = 0;
-  for (i = 0; i < prices.length; i++) {
-    profit = prices[i + 1] - prices[i];
-    if (profit > 0) {
-      totalProfit = totalProfit + profit;
+var isSubsequence = function (s, t) {
+  const sarray = s.split("");
+  const tarray = t.split("");
+  let newarray = [];
+  let i = 0;
+  let j = 0;
+  while (i < sarray.length && j < tarray.length) {
+    if (sarray[i] == tarray[j]) {
+      newarray.push(tarray[j]);
+      i++;
     }
+    j++;
+  }
+  if (s === newarray.join("")) {
+    return true;
+  } else {
+    return false;
   }
 };
-maxProfit([7, 1, 5, 3, 6, 4]);
-maxProfit([1, 2, 3, 4, 5]);
+// isSubsequence("abc", "ahbgdc");
+// isSubsequence("axc", "ahbgdc");
+isSubsequence("acb", "ahbgdc");
