@@ -1,0 +1,39 @@
+https://www.geeksforgeeks.org/dsa/check-if-pair-with-given-sum-exists-in-array/
+Two Sum - Pair with given Sum
+
+Given an array arr[] of n integers and a target value, check if there exists a pair whose sum equals the target. This is a variation of the 2Sum problem.
+
+Examples:
+
+Input: arr[] = [0, -1, 2, -3, 1], target = -2
+Output: true
+Explanation: There is a pair (1, -3) with the sum equal to given target, 1 + (-3) = -2.
+
+Input: arr[] = [1, -2, 1, 0, 5], target = 0
+Output: false
+Explanation: There is no pair with sum equals to given target.
+
+sol1:
+/\*\*
+
+- @param {number[]} nums
+- @param {number} target
+- @return {number[]}
+  \*/
+  var twoSum = function (nums, target) {
+  for (i = 0; i < nums.length; i++) {
+  for (j = i + 1; j < nums.length; j++) {
+  if (nums[i] + nums[j] == target) return console.log(true);
+  }
+  }
+  return console.log(false);
+  };
+  twoSum([0, -1, 2, -3, 1], -2);
+  twoSum([1, -2, 1, 0, 5], 0);
+
+var twoSum = function (nums, target) {
+let map=new Map();
+for(i=0;i<nums.length;i++){
+
+}
+}

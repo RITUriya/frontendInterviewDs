@@ -1,42 +1,14 @@
 /**
- * @param {string} s
- * @param {string} p
- * @return {boolean}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
  */
-var isMatch = function (s, p) {
-  const sarray = s.split("");
-  const parray = p.split("");
-  // console.log(sarray, parray, sarray.length, parray.length);
-  // if (sarray.length != parray.length) return console.log(false);
-  for (i = 0; i < parray.length; i++) {
-    if (parray[i] == "." && parray[i + 1] == "*") {
-      //console.log("22", parray[i]);
-      parray[i] = sarray[i];
-      parray[i + 1] = sarray[i + 1];
-      // console.log("25", parray[i], parray[i + 1]);
-    } else if (parray[i] == ".") {
-      // console.log("14", parray[i]);
-      parray[i] = sarray[i];
-      // console.log("16", parray[i]);
-    } else if (parray[i] == "*") {
-      //  console.log("18", parray[i]);
-      parray[i] = parray[i - 1];
-      //  console.log("20", parray[i], parray[i - 1]);
-    }
-
-    // if (sarray[i] != parray[i]) {
-    //   //  console.log("27", i, i, sarray[i], parray[i]);
-    //   console.log(false);
-    //   //return false;
-    // }
+var threeSumClosest = function (nums, target) {
+  const map = new Map();
+  let current = 0;
+  let current1 = 0;
+  for (num of nums) {
+    current = target - num - current1;
   }
-  console.log(sarray, parray, parray.join("").includes(sarray.join("")));
-  // console.log(true);
-  return parray.join("").includes(sarray.join(""));
 };
-//isMatch("aa", "a");
-//isMatch("aab", "c*a*b");
-//isMatch("aa", "a*");
-//isMatch("ab", ".*");
-//isMatch("aa", "**");
-isMatch("ab", ".*c");
+threeSumClosest([-1, 2, 1, -4], 1);
