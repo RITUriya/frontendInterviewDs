@@ -41,3 +41,25 @@ var twoSum = function (nums, target) {
     }
 };
 
+
+
+sol2:
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+    const map = new Map();
+    let current = 0;
+    for (i = 0; i < nums.length; i++) {
+        current = target - nums[i];
+
+        if (map.has(current)) {
+            return ([map.get(current), i]);
+        }
+        map.set(nums[i], i);
+    }
+
+};
+
